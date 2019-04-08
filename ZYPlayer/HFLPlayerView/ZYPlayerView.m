@@ -160,13 +160,10 @@
         self.playEndView.frame = self.bounds;
         if (isDelay) {
              dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(self.orientationObserver.duration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                 self.coverImageView.hidden = NO;
                  [self addSubview:self.playEndView];
                  });
         } else {
-            self.coverImageView.hidden = NO;
             [self addSubview:self.playEndView];
-            
         }
     }
     

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+/** 继承此类 自定义结束页 */
 @interface ZYPlayerPlayEndView : UIView
 
 @property (nonatomic, assign) BOOL fullScreen;

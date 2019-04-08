@@ -11,6 +11,7 @@
 		1A05DB09225B8E8000CEC0BB /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A05DB06225B8E8000CEC0BB /* TableViewController.m */; };
 		1A05DB0A225B8E9800CEC0BB /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB5B9A4223A49140006CD0C /* IJKMediaFramework.framework */; };
 		1A05DB0B225B8E9800CEC0BB /* IJKMediaFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB5B9A4223A49140006CD0C /* IJKMediaFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1A05DB0F225B9BFB00CEC0BB /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A05DB0E225B9BFB00CEC0BB /* BaseNavigationController.m */; };
 		1AB5B950223A48EF0006CD0C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB5B94F223A48EF0006CD0C /* AppDelegate.m */; };
 		1AB5B953223A48EF0006CD0C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB5B952223A48EF0006CD0C /* ViewController.m */; };
 		1AB5B956223A48EF0006CD0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AB5B954223A48EF0006CD0C /* Main.storyboard */; };
@@ -104,6 +105,8 @@
 		1A05DB05225B8E8000CEC0BB /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		1A05DB06225B8E8000CEC0BB /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		1A05DB07225B8E8000CEC0BB /* SinglePlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SinglePlayerViewController.h; sourceTree = "<group>"; };
+		1A05DB0D225B9BFB00CEC0BB /* BaseNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
+		1A05DB0E225B9BFB00CEC0BB /* BaseNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
 		1AB5B94B223A48EF0006CD0C /* ZYPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZYPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AB5B94E223A48EF0006CD0C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1AB5B94F223A48EF0006CD0C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -270,6 +273,8 @@
 				1AB5B980223A49140006CD0C /* HFLPlayerView */,
 				1AB5B94E223A48EF0006CD0C /* AppDelegate.h */,
 				1AB5B94F223A48EF0006CD0C /* AppDelegate.m */,
+				1A05DB0D225B9BFB00CEC0BB /* BaseNavigationController.h */,
+				1A05DB0E225B9BFB00CEC0BB /* BaseNavigationController.m */,
 				1A05DB07225B8E8000CEC0BB /* SinglePlayerViewController.h */,
 				1A05DB04225B8E8000CEC0BB /* SinglePlayerViewController.m */,
 				1A05DB05225B8E8000CEC0BB /* TableViewController.h */,
@@ -592,6 +597,7 @@
 				1AB5B9B6223A49140006CD0C /* ZYPlayerUpDownControlView.m in Sources */,
 				1AB5BA0F223A49DA0006CD0C /* UIView+WebCacheOperation.m in Sources */,
 				1AB5BA0E223A49DA0006CD0C /* UIView+WebCache.m in Sources */,
+				1A05DB0F225B9BFB00CEC0BB /* BaseNavigationController.m in Sources */,
 				1AB5B950223A48EF0006CD0C /* AppDelegate.m in Sources */,
 				1AB5B9B9223A49140006CD0C /* LFPlayerEndView.m in Sources */,
 				1AB5B9B2223A49140006CD0C /* ZYPlayerPlayAssetModel.m in Sources */,
