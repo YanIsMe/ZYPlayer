@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		1A05DB08225B8E8000CEC0BB /* SinglePlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A05DB04225B8E8000CEC0BB /* SinglePlayerViewController.m */; };
 		1A05DB09225B8E8000CEC0BB /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A05DB06225B8E8000CEC0BB /* TableViewController.m */; };
-		1A05DB0A225B8E9800CEC0BB /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB5B9A4223A49140006CD0C /* IJKMediaFramework.framework */; };
-		1A05DB0B225B8E9800CEC0BB /* IJKMediaFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB5B9A4223A49140006CD0C /* IJKMediaFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1A05DB0F225B9BFB00CEC0BB /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A05DB0E225B9BFB00CEC0BB /* BaseNavigationController.m */; };
 		1A05DB1E2261F72800CEC0BB /* ZYPlayerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A05DB1C2261F72800CEC0BB /* ZYPlayerTableViewCell.m */; };
 		1A05DB1F2261F72800CEC0BB /* ZYPlayerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A05DB1D2261F72800CEC0BB /* ZYPlayerTableViewCell.xib */; };
 		1A05DB212261F96900CEC0BB /* cat.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1A05DB202261F96900CEC0BB /* cat.jpg */; };
 		1A05DB242261FBCB00CEC0BB /* PlayListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A05DB232261FBCB00CEC0BB /* PlayListViewController.m */; };
+		1A05DB252262025E00CEC0BB /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB5B9A4223A49140006CD0C /* IJKMediaFramework.framework */; };
+		1A05DB262262025E00CEC0BB /* IJKMediaFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB5B9A4223A49140006CD0C /* IJKMediaFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1AB5B950223A48EF0006CD0C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB5B94F223A48EF0006CD0C /* AppDelegate.m */; };
 		1AB5B953223A48EF0006CD0C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB5B952223A48EF0006CD0C /* ViewController.m */; };
 		1AB5B956223A48EF0006CD0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AB5B954223A48EF0006CD0C /* Main.storyboard */; };
@@ -91,13 +91,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		1A05DB0C225B8E9800CEC0BB /* Embed Frameworks */ = {
+		1A05DB272262025F00CEC0BB /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				1A05DB0B225B8E9800CEC0BB /* IJKMediaFramework.framework in Embed Frameworks */,
+				1A05DB262262025E00CEC0BB /* IJKMediaFramework.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -235,7 +235,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A05DB0A225B8E9800CEC0BB /* IJKMediaFramework.framework in Frameworks */,
+				1A05DB252262025E00CEC0BB /* IJKMediaFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,7 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				1AB5B9C0223A49DA0006CD0C /* SDWebImage */,
-				1AB5B980223A49140006CD0C /* HFLPlayerView */,
+				1AB5B980223A49140006CD0C /* ZYPlayerView */,
 				1AB5B94E223A48EF0006CD0C /* AppDelegate.h */,
 				1AB5B94F223A48EF0006CD0C /* AppDelegate.m */,
 				1A05DB0D225B9BFB00CEC0BB /* BaseNavigationController.h */,
@@ -324,7 +324,7 @@
 			path = ZYPlayerUITests;
 			sourceTree = "<group>";
 		};
-		1AB5B980223A49140006CD0C /* HFLPlayerView */ = {
+		1AB5B980223A49140006CD0C /* ZYPlayerView */ = {
 			isa = PBXGroup;
 			children = (
 				1AB5B981223A49140006CD0C /* ZYPlayerView.h */,
@@ -366,7 +366,7 @@
 				1AB5B9A9223A49140006CD0C /* ZFPlayerGestureControl.h */,
 				1AB5B9AA223A49140006CD0C /* ZFPlayerGestureControl.m */,
 			);
-			path = HFLPlayerView;
+			path = ZYPlayerView;
 			sourceTree = "<group>";
 		};
 		1AB5B99D223A49140006CD0C /* LFPlayerEndView */ = {
@@ -459,7 +459,7 @@
 				1AB5B947223A48EF0006CD0C /* Sources */,
 				1AB5B948223A48EF0006CD0C /* Frameworks */,
 				1AB5B949223A48EF0006CD0C /* Resources */,
-				1A05DB0C225B8E9800CEC0BB /* Embed Frameworks */,
+				1A05DB272262025F00CEC0BB /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -811,6 +811,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ZYPlayer/HFLPlayerView/Resources_Lib",
+					"$(PROJECT_DIR)/ZYPlayer/ZYPlayerView/Resources_Lib",
 				);
 				INFOPLIST_FILE = ZYPlayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -831,6 +832,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ZYPlayer/HFLPlayerView/Resources_Lib",
+					"$(PROJECT_DIR)/ZYPlayer/ZYPlayerView/Resources_Lib",
 				);
 				INFOPLIST_FILE = ZYPlayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
