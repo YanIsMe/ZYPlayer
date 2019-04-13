@@ -43,6 +43,16 @@
     self.playerView.playEndView = endView;
 }
 
+- (BOOL)prefersStatusBarHidden
+{
+    return self.playerView.statusBarHidden;
+}
+
+- (BOOL)shouldAutorotate
+{
+    return NO;
+}
+
 #pragma mark - ZYPlayerViewDelegate
 
 - (void)playerView:(ZYPlayerView *)playerView hideControlView:(BOOL)hide
