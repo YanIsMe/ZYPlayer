@@ -1,64 +1,86 @@
 //
-//  TableViewController.m
+//  PlayListViewController.m
 //  ZYPlayer
 //
-//  Created by ZhaoYan on 2019/4/8.
+//  Created by ZhaoYan on 2019/4/13.
 //  Copyright © 2019 ZhaoYan. All rights reserved.
 //
 
-#import "TableViewController.h"
-#import "SinglePlayerViewController.h"
 #import "PlayListViewController.h"
+#import "ZYPlayerTableViewCell.h"
+#import "ZYPlayerView.h"
+#import "LFPlayerEndView.h"
 
-@interface TableViewController ()
+@interface PlayListViewController () <ZYPlayerViewDelegate>
+
+@property (nonatomic, strong) ZYPlayerView *playerView;
+@property (nonatomic, strong) LFPlayerEndView *playEndView;
 
 @end
 
-@implementation TableViewController
+@implementation PlayListViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"ZYPlayer";
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
+    [self.tableView registerNib: [UINib nibWithNibName:@"ZYPlayerTableViewCell" bundle:nil] forCellReuseIdentifier:@"ZYPlayerTableViewCell"];
+    [self configurationPlayer];
+}
+
+- (void)configurationPlayer
+{
+    self.playerView = [ZYPlayerView playerWithScrollView:self.tableView containerViewTag:PlayContainerViewTag];
+    self.playerView.delegate = self;
+    LFPlayerEndView *endView = [[LFPlayerEndView alloc] initWithFrame:CGRectZero];
+    __weak typeof(self) weakSelf = self;
+    endView.shareBtnClick = ^{
+        NSLog(@"点击了第%ldcell的分享",weakSelf.playerView.playingIndexPath.row);
+    };
+    endView.repeatBtnClick = ^{
+        [weakSelf.playerView replay];
+    };
+    self.playEndView = endView;
+    self.playerView.playEndView = endView;
+}
+
+#pragma mark - ZYPlayerViewDelegate
+
+- (void)playerView:(ZYPlayerView *)playerView hideControlView:(BOOL)hide
+{
+    
+}
+
+- (void)playerView:(ZYPlayerView *)playerView playDidEndAssetModel:(ZYPlayerPlayAssetModel *)assetModel
+{
+    
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 2;
+    return 10;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 50;
+    return 250;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell" forIndexPath:indexPath];
-    if (indexPath.row == 0) {
-        cell.textLabel.text = @"单独播放";
-    } else if (indexPath.row == 1) {
-        cell.textLabel.text = @"列表播放";
-    }
-    // Configure the cell...
-    
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    ZYPlayerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ZYPlayerTableViewCell" forIndexPath:indexPath];
+    cell.indexPath = indexPath;
+    __weak typeof(self) weakSelf = self;
+    cell.cellPlayTheVideo = ^(ZYPlayerPlayAssetModel * _Nonnull assetModel) {
+        if (assetModel) {
+            [weakSelf.playerView playAssetModel:assetModel];
+        }
+    };
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (indexPath.row == 0) {
-        [self.navigationController pushViewController:[[SinglePlayerViewController alloc] init] animated:YES];
-    } else if (indexPath.row == 1) {
-        [self.navigationController pushViewController:[[PlayListViewController alloc] init] animated:YES];
-    }
-}
+
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
