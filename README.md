@@ -6,3 +6,4 @@
 # 用法
 ZYPlayerView为主要一个view，可以放到任何位置。
 只要对应的播放模型ZYPlayerPlayAssetModel，
+详细用法参考Dome
