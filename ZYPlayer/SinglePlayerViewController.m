@@ -12,9 +12,9 @@
 
 @interface SinglePlayerViewController () <ZYPlayerViewDelegate>
 
-@property (nonatomic, strong) UIView *containerView;
-@property (nonatomic, strong) ZYPlayerView              *playerView;
-@property (nonatomic, strong) LFPlayerEndView            *playEndView;//自定义结束页
+@property (nonatomic, strong) UIView           *containerView;
+@property (nonatomic, strong) ZYPlayerView     *playerView;
+@property (nonatomic, strong) LFPlayerEndView  *playEndView;//自定义结束页
 
 @end
 
@@ -27,15 +27,26 @@ static NSString *kVideoCover = @"https://upload-images.jianshu.io/upload_images/
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.containerView];
-    [self.containerView addSubview:self.playerView];
+    [self configurationPlayer];
     
     NSString *videoUrlString = @"http://flv3.bn.netease.com/tvmrepo/2018/6/H/9/EDJTRBEH9/SD/EDJTRBEH9-mobile.mp4";
     [self.playerView playAssetURL:[NSURL URLWithString:videoUrlString] coverURLString:kVideoCover];
 }
 
+- (void)configurationPlayer
+{
+    self.playerView = [[ZYPlayerView alloc] initWithFrame:self.containerView.bounds];
+    self.playerView.delegate = self;
+    self.playerView.playEndView = self.playEndView;
+    [self.containerView addSubview:self.playerView];
+}
+
 - (BOOL)prefersStatusBarHidden
 {
-    return self.playerView.statusBarHidden;
+    if (self.playerView.fullScreen) {
+        return self.playerView.statusBarHidden;
+    }
+    return NO;
 }
 
 - (BOOL)shouldAutorotate
@@ -64,16 +75,6 @@ static NSString *kVideoCover = @"https://upload-images.jianshu.io/upload_images/
             _containerView = [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.navigationController.navigationBar.frame) + CGRectGetHeight(statusRect), CGRectGetWidth(self.view.bounds), 220)];
     }
     return _containerView;
-}
-
-- (ZYPlayerView *)playerView
-{
-    if (!_playerView) {
-        _playerView = [[ZYPlayerView alloc] initWithFrame:self.containerView.bounds];
-        _playerView.delegate = self;
-        _playerView.playEndView = self.playEndView;
-    }
-    return _playerView;
 }
 
 - (LFPlayerEndView *)playEndView

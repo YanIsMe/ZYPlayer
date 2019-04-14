@@ -45,7 +45,10 @@
 
 - (BOOL)prefersStatusBarHidden
 {
-    return self.playerView.statusBarHidden;
+    if (self.playerView.fullScreen) {
+        return self.playerView.statusBarHidden;
+    }
+    return NO;
 }
 
 - (BOOL)shouldAutorotate
