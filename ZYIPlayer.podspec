@@ -1,8 +1,8 @@
 
 Pod::Spec.new do |s|
 
-  s.name         = "ZYPlayer"
-  s.version      = "1.0.0"
+  s.name         = "ZYIPlayer"
+  s.version      = "1.0.1"
   s.summary      = "一个播放器架子，完全解耦，任何一部分都可以单独拿来用."
   s.description  = <<-DESC
 		   一个播放器架子，完全解耦，任何一部分都可以单独拿来用
