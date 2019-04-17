@@ -12,9 +12,9 @@
 #import "ZYPlayerManager.h"
 #import "ZYPlayerScrollViewManager.h"
 
-#if __has_include("UIImageView+WebCache.h")
-#import "UIImageView+WebCache.h"
-#endif
+//#if __has_include("UIImageView+WebCache.h")
+//#import "UIImageView+WebCache.h"
+//#endif
 //#import "UIImageView+WebCache.h"
 #import "ZYPlayRecordManager.h"
 #import "ZYPlayerUtilities.h"
@@ -116,9 +116,9 @@
     [self.controlView playerPlayBtnState:YES];
     self.coverImageView.image = nil;
     
-    #if __has_include("UIImageView+WebCache.h")
-    [self.coverImageView sd_setImageWithURL:[NSURL URLWithString:assetModel.coverURLString]];
-    #endif
+    //#if __has_include("UIImageView+WebCache.h")
+    //[self.coverImageView sd_setImageWithURL:[NSURL URLWithString:assetModel.coverURLString]];
+    //#endif
     
     if (self.playEndView && self.playEndView.superview) [self.playEndView removeFromSuperview];
     self.currentAssetModel = assetModel;
