@@ -7,3 +7,7 @@
 ZYPlayerView为主要一个view，可以放到任何位置。
 只要对应的播放模型ZYPlayerPlayAssetModel，
 详细用法参考Dome
+
+# 安装
+1、直接下载导入ZYPlayerView文件
+2、在 Podfile 中添加 pod 'ZYIPlayer'
