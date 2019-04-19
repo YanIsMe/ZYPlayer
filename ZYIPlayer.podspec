@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "ZYIPlayer"
-  s.version      = "1.0.1"
+  s.version      = "1.0.2"
   s.summary      = "一个播放器架子，完全解耦，任何一部分都可以单独拿来用."
   s.description  = <<-DESC
 		   一个播放器架子，完全解耦，任何一部分都可以单独拿来用
@@ -27,17 +27,10 @@ Pod::Spec.new do |s|
 
   s.frameworks = 'UIKit', 'AVFoundation'
   s.ios.vendored_frameworks = 'ZYPlayer/ZYPlayerView/Resources_Lib/IJKMediaFramework.framework'
-  # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  A list of resources included with the Pod. These are copied into the
-  #  target bundle with a build phase script. Anything else will be cleaned.
-  #  You can preserve files from being cleaned, please don't preserve
-  #  non-essential files like tests, examples and documentation.
-  #
 
-  # s.resource  = "icon.png"
-  # s.resources = "Resources/*.png"
+   s.resources = "ZYPlayer/ZYPlayerView/Resources_Lib/HFPlayer.bundle"
 
+   s.dependency 'SDWebImage','~> 5.0.1'
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
 
